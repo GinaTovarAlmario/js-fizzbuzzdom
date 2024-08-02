@@ -18,13 +18,23 @@ Se siete a corto di idee per lo stile, potreste prendere spunto dallo screenshot
 
 */
 
-/* LA MIA SCALETTA PER PROCEDERE*/
+/* LA MIA SCALETTA PER PROCEDERE
+- mi preparo le variabili di appoggio
+-creo il mio ciclo for che mi generi i numeri da 1 a 100
+-controllo se il mio risultato è divisibile per 3 per 5 o per entrambi
+-stampo in console la mia parola chiave in base al risultato del confronto*/
 
+// controllo prima di ogni cosa
+console.log('Js ok');
 
 // FASE DI PREPARAZIONE
+ let result = '';
 
 // FASE DI RACCOLTA DATI
-
+ for (let i = 1; i <= 100 ; i++){
+    result += i;
+ }
+ console.log(result);
 // FASE DI VALIDAZIONE
 
 // FASE DI LAVORAZIONE DATI
