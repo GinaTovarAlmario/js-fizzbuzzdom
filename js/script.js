@@ -77,13 +77,11 @@ console.log('Js ok');
     col.classList.add('text-center');
     col.classList.add('border');
 
-
-
-
     col.append(`${itemContent}`);
     row.appendChild(col);
 
     // ho il caso dei diversi colori in base al risultato
+    // rivedere questo punto volevo prima far controllo se il mio elemento aveva già quella classe
     const isRed= col.classList.contains('bg-danger');
     if (result === divisibleForBoth){
         col.classList.add('bg-danger');
@@ -93,12 +91,16 @@ console.log('Js ok');
     if( result === divisibleForFive){
         col.classList.add('bg-warning');
         col.classList.remove('bg-danger','bg-success');
-
     }
     const isGreen= col.classList.contains('bg-success');
     if (result === divisibleForThree) {
         col.classList.add('bg-success');
         col.classList.remove('bg-warning','bg-danger');
+    }
+    const isBasic= col.classList.contains('bg-primary');
+    if (itemContent === i) {
+        col.classList.add('bg-primary');
+        col.classList.remove('bg-danger','bg-warning','bg-success');
     }
 }
 // FASE DI OUTPUT
