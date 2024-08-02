@@ -33,29 +33,42 @@ console.log('Js ok');
  let divisibleForThree = 'Fizz';
  let divisibleForFive = 'Buzz';
  let divisibleForBoth = 'FizzBuzz'
+ // FASE DI RACCOLTA DATI
 // prendo il mio elemento dal DOM
  const target = document.getElementById('target');
- const list = document.createElement('ul');
-// FASE DI RACCOLTA DATI
+ const row = document.createElement('div');
+ row.classList.add('row');
+ 
+ // FASE DI LAVORAZIONE DATI
+
  for (let i = 1; i <= 100 ; i++){
     if (i % 3 === 0 && i % 5 === 0 ){
-        console.log(i , divisibleForBoth);
-        } else if (i % 5 === 0 ){
-        console.log(i , divisibleForFive);
-        } else if (i % 3 === 0){
-        console.log(i , divisibleForThree);
-        } else {
+        result = divisibleForBoth;
+        console.log(divisibleForBoth);
+    } else if (i % 5 === 0 ){
+        result = divisibleForFive;
+        console.log(divisibleForFive);
+     } else if (i % 3 === 0){
+        result = divisibleForThree;
+        console.log(divisibleForThree);
+    } else {
+        result = '';
         console.log(i);
     }
-    const listItem = document.createElement('li');
-    listItem.append(`numero ${i}`);
-    list.appendChild(listItem);
+    // mi serve un variabile per poter differenziare fra i e le parole date da stampare in pagina
+    let itemContent ='';
+    if (result){
+        itemContent = result;
+    } else {
+        itemContent= i;
+    }
+    const col = document.createElement('div');
+    col.classList.add('col-2');
+    col.append(`${itemContent}`);
+    row.appendChild(col);
 }
-target.appendChild(list);
-console.log(result);
-
-// FASE DI VALIDAZIONE
-
-// FASE DI LAVORAZIONE DATI
-
 // FASE DI OUTPUT
+target.appendChild(row);
+
+
+
