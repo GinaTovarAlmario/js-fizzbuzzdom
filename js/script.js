@@ -36,9 +36,11 @@ console.log('Js ok');
  // FASE DI RACCOLTA DATI
 // prendo il mio elemento dal DOM
  const target = document.getElementById('target');
-//  vado a creare un elementop nel DOM e gli attribuisco una classe
+//  vado a creare un elementop nel DOM e gli attribuisco diverse classi
  const row = document.createElement('div');
  row.classList.add('row');
+//  row.classList.add('gx-4');
+//  row.classList.add('gy-4');
 
  // FASE DI LAVORAZIONE DATI
 
@@ -69,16 +71,35 @@ console.log('Js ok');
     }
     // creo un elemento nel DOM che anrò a riempire con i miei i
     const col = document.createElement('div');
-    // vado ad assegnare al mio elemento una classe
+    // vado ad assegnare al mio elemento diverse classi
     col.classList.add('col-2');
+    col.classList.add('py-4');
+    col.classList.add('text-center');
+    col.classList.add('border');
+
+
+
 
     col.append(`${itemContent}`);
     row.appendChild(col);
 
     // ho il caso dei diversi colori in base al risultato
     const isRed= col.classList.contains('bg-danger');
+    if (result === divisibleForBoth){
+        col.classList.add('bg-danger');
+        col.classList.remove('bg-warning','bg-success');
+    }
     const isYellow= col.classList.contains('bg-warning');
-    const isGreen= col.classList.contains('bg-succes');
+    if( result === divisibleForFive){
+        col.classList.add('bg-warning');
+        col.classList.remove('bg-danger','bg-success');
+
+    }
+    const isGreen= col.classList.contains('bg-success');
+    if (result === divisibleForThree) {
+        col.classList.add('bg-success');
+        col.classList.remove('bg-warning','bg-danger');
+    }
 }
 // FASE DI OUTPUT
 target.appendChild(row);
