@@ -74,6 +74,11 @@ console.log('Js ok');
 
     col.append(`${itemContent}`);
     row.appendChild(col);
+
+    // ho il caso dei diversi colori in base al risultato
+    const isRed= col.classList.contains('bg-danger');
+    const isYellow= col.classList.contains('bg-warning');
+    const isGreen= col.classList.contains('bg-succes');
 }
 // FASE DI OUTPUT
 target.appendChild(row);
