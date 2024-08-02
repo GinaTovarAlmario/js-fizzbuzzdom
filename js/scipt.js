@@ -29,10 +29,22 @@ console.log('Js ok');
 
 // FASE DI PREPARAZIONE
  let result = '';
+ let divisibleForThree = 'Fizz';
+ let divisibleForFive = 'Buzz';
+ let divisibleForBoth = 'FizzBuzz'
+ 
 
 // FASE DI RACCOLTA DATI
  for (let i = 1; i <= 100 ; i++){
-    result += i;
+    if (i % 3 === 0 && i % 5 === 0 ){
+        console.log(i , divisibleForBoth);
+        } else if (i % 5 === 0 ){
+        console.log(i , divisibleForFive);
+        } else if (i % 3 === 0){
+        console.log(i , divisibleForThree);
+        } else {
+        console.log(i);
+        }
  }
  console.log(result);
 // FASE DI VALIDAZIONE
