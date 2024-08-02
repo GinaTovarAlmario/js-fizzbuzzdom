@@ -20,6 +20,7 @@ Se siete a corto di idee per lo stile, potreste prendere spunto dallo screenshot
 
 /* LA MIA SCALETTA PER PROCEDERE
 - mi preparo le variabili di appoggio
+- per la seconda milestone mi creo un elemento nel Dom che faccia da contenitore
 -creo il mio ciclo for che mi generi i numeri da 1 a 100
 -controllo se il mio risultato è divisibile per 3 per 5 o per entrambi
 -stampo in console la mia parola chiave in base al risultato del confronto*/
@@ -33,7 +34,7 @@ console.log('Js ok');
  let divisibleForFive = 'Buzz';
  let divisibleForBoth = 'FizzBuzz'
  
-
+ const target = document.getElementById('target');
 // FASE DI RACCOLTA DATI
  for (let i = 1; i <= 100 ; i++){
     if (i % 3 === 0 && i % 5 === 0 ){
