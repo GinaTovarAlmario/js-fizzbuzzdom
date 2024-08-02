@@ -33,8 +33,9 @@ console.log('Js ok');
  let divisibleForThree = 'Fizz';
  let divisibleForFive = 'Buzz';
  let divisibleForBoth = 'FizzBuzz'
- 
+// prendo il mio elemento dal DOM
  const target = document.getElementById('target');
+ const list = document.createElement('ul');
 // FASE DI RACCOLTA DATI
  for (let i = 1; i <= 100 ; i++){
     if (i % 3 === 0 && i % 5 === 0 ){
@@ -45,9 +46,14 @@ console.log('Js ok');
         console.log(i , divisibleForThree);
         } else {
         console.log(i);
-        }
- }
- console.log(result);
+    }
+    const listItem = document.createElement('li');
+    listItem.append(`numero ${i}`);
+    list.appendChild(listItem);
+}
+target.appendChild(list);
+console.log(result);
+
 // FASE DI VALIDAZIONE
 
 // FASE DI LAVORAZIONE DATI
