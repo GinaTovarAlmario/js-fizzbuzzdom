@@ -32,25 +32,30 @@ console.log('Js ok');
  let result = '';
  let divisibleForThree = 'Fizz';
  let divisibleForFive = 'Buzz';
- let divisibleForBoth = 'FizzBuzz'
+ let divisibleForBoth = 'FizzBuzz';
  // FASE DI RACCOLTA DATI
 // prendo il mio elemento dal DOM
  const target = document.getElementById('target');
+//  vado a creare un elementop nel DOM e gli attribuisco una classe
  const row = document.createElement('div');
  row.classList.add('row');
- 
+
  // FASE DI LAVORAZIONE DATI
 
  for (let i = 1; i <= 100 ; i++){
+    // controllo se i è divisibile per 3 e 5
     if (i % 3 === 0 && i % 5 === 0 ){
         result = divisibleForBoth;
         console.log(divisibleForBoth);
+        // controllo se i è divisibile per 5
     } else if (i % 5 === 0 ){
         result = divisibleForFive;
         console.log(divisibleForFive);
+        // controllo se i è divisibile per 3
      } else if (i % 3 === 0){
         result = divisibleForThree;
         console.log(divisibleForThree);
+        // stampo i nei casi dove non sono vere le condizioni viste sopra
     } else {
         result = '';
         console.log(i);
@@ -62,8 +67,11 @@ console.log('Js ok');
     } else {
         itemContent= i;
     }
+    // creo un elemento nel DOM che anrò a riempire con i miei i
     const col = document.createElement('div');
+    // vado ad assegnare al mio elemento una classe
     col.classList.add('col-2');
+
     col.append(`${itemContent}`);
     row.appendChild(col);
 }
